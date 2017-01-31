@@ -1,0 +1,113 @@
+body {
+	font-size : 13pt;
+	font-family : "Trebuchet MS", Arial, sans-serif;
+	background-color: #add8e6;
+}
+
+h2 {
+	margin-top : 0px;
+	font-weight : bold;
+}
+
+.bag {
+	position: absolute;
+	left: 50px;
+	top: 60px;
+	background-color : black;
+	cursor : pointer;
+    width: 200px;
+    height: 75px;
+    padding: 0px 10px;
+    background-image: url(img/bagclose.jpg);
+}
+
+.bag.open {
+    background-image: url(img/bagopen.jpg);
+}
+
+.inventory {
+	position: absolute;
+	left: 50px;
+	top: 135px;
+    margin: 0px;
+    padding: 10px;
+	width : 200px;
+	height : 300px;
+    background-color: #50c8b0;
+}
+
+.case{
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-image: url(img/empty.jpg);
+}
+
+#status {
+	position : absolute;
+	top : 0px;
+	width : 100%;
+	text-align : center;
+	border-bottom : 1px solid lightGray;
+	background-color: #50c8b0;
+}
+
+#status div {
+	display : inline-block;
+	padding : 10px 20px;
+	color : gray;
+	border-left : 1px solid lightGray;
+	border-right : 1px solid lightGray;
+	background-color: #50c8b0;
+}
+#status div+div {
+	border-left : none;
+}
+
+.screen{
+	padding : 10px;
+	margin : auto;
+	margin-top : 60px;
+	max-width : 600px;
+	height: 300px;
+	border : 1px solid lightGray;
+	background-image: url(img/intro.jpg);
+}
+
+.section {
+	padding : 10px;
+	margin : auto;
+	max-width : 600px;
+	border : 1px solid black;
+	background-color: lightGray;
+}
+.section#intro {
+	display : block;
+}
+.section button {
+	display : block;
+	width : 100%;
+	color : black;
+	text-decoration : none;
+	padding : 5px;
+	margin-top : 30px;
+	background : #50c8b0;
+	border : none;
+	cursor : pointer;
+}
+.section button+button  {
+	margin-top : 10px;
+}
+
+.section button:hover {
+	color : lightGray;
+	background-color : black;
+}
+
+.battle {
+	padding : 10px 10px;
+	margin : 20px 0px;
+	box-shadow : 0px 2px 8px gray;
+}
+
+

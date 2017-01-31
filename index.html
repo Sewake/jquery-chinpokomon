@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+		<script src="sorcery.js"></script>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+		<meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
+		<title>Pokeball & Chimpoko</title>
+	</head>
+		
+	</head>
+		
+	<body>
+		<div id="status">
+			<div class="life">
+				Life : <span class="value">
+					<img class="life" src="img/life.png">
+					<img class="life" src="img/life.png">
+					<img class="life" src="img/life.png">
+				</span>
+			</div>
+		</div>
+
+
+
+		<div class="screen">
+		</div>
+	
+		<div class="bag"></div>
+		<div class="inventory">
+			<div class="case"></div>
+			<div class="case"></div>
+			<div class="case"></div>
+			<div class="case"></div>
+			<div class="case"></div>
+			<div class="case"></div>
+		</div>
+		<div class="section" id="intro" pic="intro">
+			<h2>Master Chinpokomon</h2>
+			Vous êtes Sachouille, grande star télévisuelle qui cherche à devenir un grand maître Chinpokomon. 
+			Vous ne devez pas décevoir votre auditoire sous peine de perdre votre emploi !
+
+			<button go="begin">Commencer l'aventure !</button>
+		</div>
+	
+		
+		<div class="section" id="begin" pic="begin">
+			Vous sortez de chez vous.
+			
+			<button go="herbes">Le scénariste vous dit qu'il faut désormais se rendre vers les hautes herbes.</button>
+			<button go="tournage">Vous en avez déjà marre de cette émission, à la base vous vouliez être boulanger. Vous sortez du plateau de tournage.</button>
+		</div>
+	
+		
+		<div class="section" id="herbes" pic="herbes">
+			Vous arrivez face aux Hautes herbes. <br>
+			Une pancarte semble indiquer quelque chose, néanmoins vous n'arrivez pas à lire ce qu'il y a écrit...
+			
+			<button go="pls">Vous vous mettez en Position Latérale de Sécurité.</button>
+			<button go="battle">Vous bravez le danger comme tout bon maître Chinpokomon qui se respecte et traversez les hautes herbes !</button>
+			<button go="realisateur" class="lifelost">Vous demandez au réalisateur ce qu'il y a écrit sur la pancarte.</button>
+		</div>
+		
+		<div class="section" id="tournage" pic="tournage">
+			Vous sortez du plateau de tournage et pleurez de colère. <br>
+			Le réalisateur vous crie dessus, vous êtes viré.
+		
+			<button go="intro">Recommencer cette formidable aventure !</button>
+		</div>
+	
+		<div class="section" id="pls" pic="herbes" pic="herbes">
+			Allons donc ! <br>
+			Munissez vous de votre courage, les enfants vous regardent !
+
+			<button go="battle">Vous bravez le danger comme tout bon maître Chinpokomon qui se respecte et traversez les hautes herbes !</button>
+			<button go="realisateur" class="lifelost">Vous demandez au réalisateur ce qu'il y a écrit sur la pancarte.</button>
+		</div>
+		
+		<div class="section" id="battle" pic="battle">
+			Vous vous tenez face à un Chimpokomon sauvage !
+			<button go="cailloux">Vous le caillassez avec les cailloux les plus proches.</button>
+			<button go="pokeball" use="pokeball">Vous lui lancez une pokéball dessus afin de tenter de le capturer !</button>
+			<button go="bonbon" use="bonbon">Vous mangez un bonbon de votre inventaire.</button>
+		</div>
+
+		<div class="section" id="realisateur" pic="herbes">
+			Il vous répond : <br>
+			"しかし、あなたは馬鹿をやっています！<br>
+			あなたは私たちがお金を失う作りましたよ！" <br>
+			Le réalisateur vous cogne, vous perdez 1 point de vie et 100 euros de salaire. <br>
+			Vous comprennez pas vraiment où il veut en venir, mais il a l'air sacrément en colère.
+			<button go="vachekiri" class="lifelost">Vous vous souvenez brièvement de vos cours de Japonais au collège. <br>
+			Vous vous mettez à crier "LA VACHE KIRI" pour essayer d'arranger les choses.</button>
+			<button go="herbes">Vous comprenez qu'il faut se tenir à carreaux désormais et retournez jouer votre scène.</button>
+		</div>
+
+		<div class="section" id="vachekiri" pic="herbes">
+			"HARAKIRI ?? あなたがしたい場合"
+			Le réalisateur vous donne un katana, il semblerait qu'il vous est mal compris. <br>
+			Vous vous blessez lamentablement avec le katana, vous perdez 1 point de vie.
+			<button go="herbes" item="katana">Vous stockez le katana dans votre inventaire, il vous sera peut-être utile au cours de votre aventure.<br>
+		</div>
+		
+		<div class="section" id="cailloux" pic="battle">
+			Le Chimpokomon est affaiblit suite à votre attaque ! <br>
+			Il parvient quand même à contre-attaquer, vous perdez 1 point de vie.
+			<button go="cbattle" class="lifelost">Ok.</button>
+		</div>
+		
+		
+		<div class="section" id="pokeball" pic="battle">
+			C'est raté, c'est bien connu, il faut affaiblir le Chimpokomon avant d'essayer de le capturer ! <br>
+			Vous passez pour un gros nul aux yeux des enfants, votre popularité baisse et votre réalisateur décide de vous virer.
+			<button go="intro">Recommencer l'aventure.</button>
+		</div>
+		
+		
+		<div class="section" id="bonbon" pic="battle">
+			Ce bonbon saveur banane vous rappelle votre enfance, vous vous sentez mieux. <br>
+			Vous regagnez 1 point de vie.
+			
+			<button go="bbattle" class="lifegain">Miam !</button>
+		</div>
+		
+		<div class="section" id="bbattle" pic="battle">
+			Vous vous tenez face à un Chimpokomon sauvage !
+			<button go="cailloux">Vous le caillassez avec les cailloux les plus proches.</button>
+			<button go="pokeball" use="pokeball">Vous lui lancez une pokéball dessus afin de tenter de le capturer !</button>
+		</div>
+		
+		<div class="section" id="cbattle" pic="battle">
+			Le Chimpokomon sauvage est affaiblit !
+			<button go="cbattle" class="lifelost">Vous jetez une fois de plus des cailloux sur le Chimpokomon</button>
+			<button go="capture" use="pokeball" item="yellowgun">Vous lui lancez une pokéball dessus afin de tenter de le capturer !</button>
+		</div>
+
+		<div class="section" id="capture" pic="battle">
+			Vous avez capturé YellowGun ! <br>
+			Il fait désormais partie de votre inventaire.
+			<button go="raquette">Votre séance de tournage est terminée pour aujourd'hui, vous décidez de rentrer chez vous.</button>
+		</div>
+
+		<div class="section" id="raquette" pic="raquette">
+			Sur le chemin du retour, vous tombez sur la Team Raquette ! Ils en ont après votre YellowGun ! <br>
+			Malheureusement, à force de lui jeter des cailloux dessus, vous l'avez complètement affaiblit, il vous sera d'aucune utilité.
+			<button go="concede" use="yellowgun">Donner le YellowGun sans broncher en espérant que la Team Raquette ne vous tabasse pas.</button>
+		</div>
+
+		<div class="section" id="concede" pic="dead">
+			Malheureusement pour vous, la Team Raquette n'est pas si tendre. <br>
+			Elle vous vole votre YellowGun et vous tabasse au passage.
+			<button go="intro">Recommencer l'aventure !</button>
+		</div>
+
+		<div class="section" id="victory" pic="victory">
+			Vous avez réussi ! <br>
+			Vous repartez chez vous avec votre YellowGun et avez éradiqué toute menace ce soir, vous passez pour un héro national aux yeux des enfants !
+			<button go="intro">Recommencer l'aventure !</button>
+		</div>
+		
+		<div class="section" id="jail" pic="prison">
+			Le pokémon que vous avez découpé au Katana était malheureusement un vrai acteur. <br>
+			Manque de bol le tribunal ne s'est pas bien passé : votre crime a été enregistré par la caméra.
+			<button go="intro">Fin</button>
+		</div>
+		
+		<div class="section" id="dead" pic="dead">
+			Vous êtes mort(e) ! C'est balot.
+			<button go="intro">Fin</button>
+		</div>
+		
+	</body>
+
+</html>
